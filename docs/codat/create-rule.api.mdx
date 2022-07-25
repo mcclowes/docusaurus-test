@@ -1,0 +1,36 @@
+---
+id: create-rule
+sidebar_label: Create rule
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Rules"],"description":"Create a [rule](https://docs.codat.io/docs/core-rules)","operationId":"CreateRule","requestBody":{"content":{"application/json":{"schema":{"required":["companyId","type"],"type":"object","properties":{"companyId":{"type":"string","description":"Leave the companyID blank to create a rule that applies to all companies","format":"uuid"},"type":{"type":"string"},"notifiers":{"type":"object","properties":{"emails":{"type":"array","items":{"type":"string"},"nullable":true},"webhook":{"type":"string","nullable":true}},"additionalProperties":false}},"additionalProperties":false}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"required":["id","type"],"type":"object","properties":{"id":{"type":"string","format":"uuid"},"type":{"type":"string"},"companyId":{"type":"string","format":"uuid","nullable":true},"notifiers":{"type":"object","properties":{"emails":{"type":"array","items":{"type":"string"},"nullable":true},"webhook":{"type":"string","nullable":true}},"additionalProperties":false}},"additionalProperties":false}}}},"401":{"description":"Authentication failed - see [authentication instructions](https://docs.codat.io/docs/authentication-1)"},"402":{"description":"Account limit reached - see [account limits](https://docs.codat.io/docs/environments-1)"}},"parameters":[],"method":"post","path":"/rules","servers":[{"url":"https://api.codat.io","description":"Codat API (Production)"}],"security":[{"AuthorizationHeader":[]}],"securitySchemes":{"AuthorizationHeader":{"type":"apiKey","description":"The word \"Basic\" followed by a space and your API Key, base64 encoded, which can be found [here](https://portal-integration.codat.io/#/profile)","name":"Authorization","in":"header"}},"jsonRequestBodyExample":{"companyId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","type":"string","notifiers":{"emails":["string"],"webhook":"string"}},"info":{"title":"Codat API","description":"[What's changed in our Swagger](https://docs.codat.io/docs/new-swagger-ui)","version":"v1"},"postman":{"name":"Create rule","description":{"content":"Create a [rule](https://docs.codat.io/docs/core-rules)","type":"text/plain"},"url":{"path":["rules"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/json"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"raw","raw":"\"\"","options":{"raw":{"language":"json"}}}}}
+sidebar_class_name: "post api-method"
+info_path: docs/codat/codat-api
+---
+
+import ParamsItem from "@theme/ParamsItem";
+import SchemaItem from "@theme/SchemaItem"
+import ApiTabs from "@theme/ApiTabs";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+## Create rule
+
+
+
+Create a [rule](https://docs.codat.io/docs/core-rules)
+
+<details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Request Body</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"companyId"} required={true} schemaDescription={"Leave the companyID blank to create a rule that applies to all companies"} schemaName={"uuid"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"type"} required={true} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>notifiers</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"emails"} required={false} schemaDescription={undefined} schemaName={"string[]"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"webhook"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem></div></details></SchemaItem></ul></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Success
+
+</div><div><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaDescription={undefined} schemaName={"uuid"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"type"} required={true} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"companyId"} required={false} schemaDescription={undefined} schemaName={"uuid"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>notifiers</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"emails"} required={false} schemaDescription={undefined} schemaName={"string[]"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"webhook"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem></div></details></SchemaItem></ul></details></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Authentication failed - see [authentication instructions](https://docs.codat.io/docs/authentication-1)
+
+</div><div></div></TabItem><TabItem label={"402"} value={"402"}><div>
+
+Account limit reached - see [account limits](https://docs.codat.io/docs/environments-1)
+
+</div><div></div></TabItem></ApiTabs></div>
+      

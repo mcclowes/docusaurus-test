@@ -1,0 +1,44 @@
+---
+id: create-company
+sidebar_label: Create company
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Companies"],"description":"Create a [company](https://docs.codat.io/docs/core-companies)","operationId":"CreateCompany","requestBody":{"description":"Details of the company you wish to create.<br/>If you specify a 'platformType', the company will be created with a data connection to that platform.","content":{"application/json":{"schema":{"required":["name"],"type":"object","properties":{"name":{"type":"string"},"platformType":{"type":"string","nullable":true},"createdByUserId":{"type":"string","format":"uuid","nullable":true}},"additionalProperties":false}}}},"responses":{"200":{"description":"Created company","content":{"application/json":{"schema":{"required":["dataConnections","id","name","platform","redirect","status"],"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"platform":{"type":"string"},"redirect":{"type":"string"},"status":{"type":"string"},"lastSync":{"type":"string","format":"date-time","nullable":true},"dataConnections":{"type":"array","items":{"required":["id","integrationId","linkUrl","platformName","sourceId"],"type":"object","properties":{"id":{"type":"string","format":"uuid"},"integrationId":{"type":"string","format":"uuid"},"sourceId":{"type":"string","format":"uuid"},"platformName":{"type":"string"},"linkUrl":{"type":"string"},"status":{"type":"string","nullable":true},"lastSync":{"type":"string","format":"date-time","nullable":true},"created":{"type":"string","format":"date-time","nullable":true},"sourceType":{"type":"string","nullable":true}},"additionalProperties":false}},"created":{"type":"string","format":"date-time","nullable":true},"createdByUserName":{"type":"string","nullable":true}},"additionalProperties":false}}}},"400":{"description":"Invalid request body; see validation for more information."},"401":{"description":"Authentication failed - see [authentication instructions](https://docs.codat.io/docs/authentication-1)"},"402":{"description":"Account limit reached - see [account limits](https://docs.codat.io/docs/environments-1)"}},"parameters":[],"method":"post","path":"/companies","servers":[{"url":"https://api.codat.io","description":"Codat API (Production)"}],"security":[{"AuthorizationHeader":[]}],"securitySchemes":{"AuthorizationHeader":{"type":"apiKey","description":"The word \"Basic\" followed by a space and your API Key, base64 encoded, which can be found [here](https://portal-integration.codat.io/#/profile)","name":"Authorization","in":"header"}},"jsonRequestBodyExample":{"name":"string","platformType":"string","createdByUserId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"},"info":{"title":"Codat API","description":"[What's changed in our Swagger](https://docs.codat.io/docs/new-swagger-ui)","version":"v1"},"postman":{"name":"Create company","description":{"content":"Create a [company](https://docs.codat.io/docs/core-companies)","type":"text/plain"},"url":{"path":["companies"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/json"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"raw","raw":"\"\"","options":{"raw":{"language":"json"}}}}}
+sidebar_class_name: "post api-method"
+info_path: docs/codat/codat-api
+---
+
+import ParamsItem from "@theme/ParamsItem";
+import SchemaItem from "@theme/SchemaItem"
+import ApiTabs from "@theme/ApiTabs";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+## Create company
+
+
+
+Create a [company](https://docs.codat.io/docs/core-companies)
+
+<details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Request Body</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}><div style={{"marginTop":"1rem","marginBottom":"1rem"}}>
+
+Details of the company you wish to create.<br/>If you specify a 'platformType', the company will be created with a data connection to that platform.
+
+</div></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"name"} required={true} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"platformType"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"createdByUserId"} required={false} schemaDescription={undefined} schemaName={"uuid"} qualifierMessage={undefined}></SchemaItem></ul></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Created company
+
+</div><div><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaDescription={undefined} schemaName={"uuid"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"name"} required={true} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"platform"} required={true} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"redirect"} required={true} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"status"} required={true} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"lastSync"} required={false} schemaDescription={undefined} schemaName={"date-time"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>dataConnections</strong><span style={{"opacity":"0.6"}}> object[]</span><strong style={{"fontSize":"var(--ifm-code-font-size)","color":"var(--openapi-required)"}}> required</strong></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={true} schemaDescription={undefined} schemaName={"uuid"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"integrationId"} required={true} schemaDescription={undefined} schemaName={"uuid"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"sourceId"} required={true} schemaDescription={undefined} schemaName={"uuid"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"platformName"} required={true} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"linkUrl"} required={true} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"status"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"lastSync"} required={false} schemaDescription={undefined} schemaName={"date-time"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"created"} required={false} schemaDescription={undefined} schemaName={"date-time"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"sourceType"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem></div></details></SchemaItem><SchemaItem collapsible={false} name={"created"} required={false} schemaDescription={undefined} schemaName={"date-time"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"createdByUserName"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem></ul></details></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+Invalid request body; see validation for more information.
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Authentication failed - see [authentication instructions](https://docs.codat.io/docs/authentication-1)
+
+</div><div></div></TabItem><TabItem label={"402"} value={"402"}><div>
+
+Account limit reached - see [account limits](https://docs.codat.io/docs/environments-1)
+
+</div><div></div></TabItem></ApiTabs></div>
+      

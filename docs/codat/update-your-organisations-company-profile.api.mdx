@@ -1,0 +1,36 @@
+---
+id: update-your-organisations-company-profile
+sidebar_label: Update your organisations company profile
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Profile"],"description":"If you are using the Codat 'link site' this information will be visible there.","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string","nullable":true},"logoUrl":{"type":"string","nullable":true},"iconUrl":{"type":"string","nullable":true},"redirectUrl":{"type":"string","nullable":true},"whiteListUrls":{"type":"array","items":{"type":"string"},"nullable":true},"apiKey":{"type":"string","nullable":true},"alertAuthHeader":{"type":"string","nullable":true},"confirmCompanyName":{"type":"boolean"}},"additionalProperties":false}}}},"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string","nullable":true},"logoUrl":{"type":"string","nullable":true},"iconUrl":{"type":"string","nullable":true},"redirectUrl":{"type":"string","nullable":true},"whiteListUrls":{"type":"array","items":{"type":"string"},"nullable":true},"apiKey":{"type":"string","nullable":true},"alertAuthHeader":{"type":"string","nullable":true},"confirmCompanyName":{"type":"boolean"}},"additionalProperties":false}}}},"401":{"description":"Authentication failed - see [authentication instructions](https://docs.codat.io/docs/authentication-1)"},"402":{"description":"Account limit reached - see [account limits](https://docs.codat.io/docs/environments-1)"}},"parameters":[],"method":"put","path":"/profile","servers":[{"url":"https://api.codat.io","description":"Codat API (Production)"}],"security":[{"AuthorizationHeader":[]}],"securitySchemes":{"AuthorizationHeader":{"type":"apiKey","description":"The word \"Basic\" followed by a space and your API Key, base64 encoded, which can be found [here](https://portal-integration.codat.io/#/profile)","name":"Authorization","in":"header"}},"jsonRequestBodyExample":{"name":"string","logoUrl":"string","iconUrl":"string","redirectUrl":"string","whiteListUrls":["string"],"apiKey":"string","alertAuthHeader":"string","confirmCompanyName":true},"info":{"title":"Codat API","description":"[What's changed in our Swagger](https://docs.codat.io/docs/new-swagger-ui)","version":"v1"},"postman":{"name":"Update your organisations company profile","description":{"content":"If you are using the Codat 'link site' this information will be visible there.","type":"text/plain"},"url":{"path":["profile"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Content-Type","value":"application/json"},{"key":"Accept","value":"application/json"}],"method":"PUT","body":{"mode":"raw","raw":"\"\"","options":{"raw":{"language":"json"}}}}}
+sidebar_class_name: "put api-method"
+info_path: docs/codat/codat-api
+---
+
+import ParamsItem from "@theme/ParamsItem";
+import SchemaItem from "@theme/SchemaItem"
+import ApiTabs from "@theme/ApiTabs";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+## Update your organisations company profile
+
+
+
+If you are using the Codat &#39;link site&#39; this information will be visible there.
+
+<details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Request Body</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"name"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"logoUrl"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"iconUrl"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"redirectUrl"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"whiteListUrls"} required={false} schemaDescription={undefined} schemaName={"string[]"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"apiKey"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"alertAuthHeader"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"confirmCompanyName"} required={false} schemaDescription={undefined} schemaName={"boolean"} qualifierMessage={undefined}></SchemaItem></ul></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Success
+
+</div><div><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"name"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"logoUrl"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"iconUrl"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"redirectUrl"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"whiteListUrls"} required={false} schemaDescription={undefined} schemaName={"string[]"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"apiKey"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"alertAuthHeader"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"confirmCompanyName"} required={false} schemaDescription={undefined} schemaName={"boolean"} qualifierMessage={undefined}></SchemaItem></ul></details></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Authentication failed - see [authentication instructions](https://docs.codat.io/docs/authentication-1)
+
+</div><div></div></TabItem><TabItem label={"402"} value={"402"}><div>
+
+Account limit reached - see [account limits](https://docs.codat.io/docs/environments-1)
+
+</div><div></div></TabItem></ApiTabs></div>
+      

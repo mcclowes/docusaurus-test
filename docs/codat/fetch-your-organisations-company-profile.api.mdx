@@ -1,0 +1,36 @@
+---
+id: fetch-your-organisations-company-profile
+sidebar_label: Fetch your organisations company profile
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Profile"],"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string","nullable":true},"logoUrl":{"type":"string","nullable":true},"iconUrl":{"type":"string","nullable":true},"redirectUrl":{"type":"string","nullable":true},"whiteListUrls":{"type":"array","items":{"type":"string"},"nullable":true},"apiKey":{"type":"string","nullable":true},"alertAuthHeader":{"type":"string","nullable":true},"confirmCompanyName":{"type":"boolean"}},"additionalProperties":false}}}},"401":{"description":"Authentication failed - see [authentication instructions](https://docs.codat.io/docs/authentication-1)"},"402":{"description":"Account limit reached - see [account limits](https://docs.codat.io/docs/environments-1)"}},"parameters":[],"description":"Fetch your organisations company profile","method":"get","path":"/profile","servers":[{"url":"https://api.codat.io","description":"Codat API (Production)"}],"security":[{"AuthorizationHeader":[]}],"securitySchemes":{"AuthorizationHeader":{"type":"apiKey","description":"The word \"Basic\" followed by a space and your API Key, base64 encoded, which can be found [here](https://portal-integration.codat.io/#/profile)","name":"Authorization","in":"header"}},"info":{"title":"Codat API","description":"[What's changed in our Swagger](https://docs.codat.io/docs/new-swagger-ui)","version":"v1"},"postman":{"name":"Fetch your organisations company profile","description":{"type":"text/plain"},"url":{"path":["profile"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: docs/codat/codat-api
+---
+
+import ParamsItem from "@theme/ParamsItem";
+import SchemaItem from "@theme/SchemaItem"
+import ApiTabs from "@theme/ApiTabs";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+## Fetch your organisations company profile
+
+
+
+Fetch your organisations company profile
+
+<div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Success
+
+</div><div><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"name"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"logoUrl"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"iconUrl"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"redirectUrl"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"whiteListUrls"} required={false} schemaDescription={undefined} schemaName={"string[]"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"apiKey"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"alertAuthHeader"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"confirmCompanyName"} required={false} schemaDescription={undefined} schemaName={"boolean"} qualifierMessage={undefined}></SchemaItem></ul></details></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Authentication failed - see [authentication instructions](https://docs.codat.io/docs/authentication-1)
+
+</div><div></div></TabItem><TabItem label={"402"} value={"402"}><div>
+
+Account limit reached - see [account limits](https://docs.codat.io/docs/environments-1)
+
+</div><div></div></TabItem></ApiTabs></div>
+      

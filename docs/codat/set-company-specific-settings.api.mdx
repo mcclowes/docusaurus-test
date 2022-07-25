@@ -1,0 +1,46 @@
+---
+id: set-company-specific-settings
+sidebar_label: Set company specific settings
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Settings"],"description":"Company settings can be used to override the integration-level settings for whether Codat's desktop connectors are installed for\r\n            ongoing synchronisations or whether a one-time sync is performed and the connector is uninstalled. <br />\r\n            See [On-prem connector setup](https://docs.codat.io/docs/offline-connectors) for more information.","parameters":[{"name":"companyId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}],"requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"companyId":{"type":"string","format":"uuid"},"offlineConnectorInstall":{"type":"boolean","nullable":true},"oneTimeSync":{"type":"string","nullable":true}},"additionalProperties":false}}}},"responses":{"200":{"description":"Updated settings","content":{"application/json":{"schema":{"required":["companyId","offlineConnectorInstall"],"type":"object","properties":{"companyId":{"type":"string","format":"uuid"},"offlineConnectorInstall":{"type":"boolean"}},"additionalProperties":false}}}},"400":{"description":"Settings object invalid"},"401":{"description":"Authentication failed - see [authentication instructions](https://docs.codat.io/docs/authentication-1)"},"402":{"description":"Account limit reached - see [account limits](https://docs.codat.io/docs/environments-1)"},"404":{"description":"Company not found"}},"method":"put","path":"/companies/{companyId}/settings","servers":[{"url":"https://api.codat.io","description":"Codat API (Production)"}],"security":[{"AuthorizationHeader":[]}],"securitySchemes":{"AuthorizationHeader":{"type":"apiKey","description":"The word \"Basic\" followed by a space and your API Key, base64 encoded, which can be found [here](https://portal-integration.codat.io/#/profile)","name":"Authorization","in":"header"}},"jsonRequestBodyExample":{"companyId":"3fa85f64-5717-4562-b3fc-2c963f66afa6","offlineConnectorInstall":true,"oneTimeSync":"string"},"info":{"title":"Codat API","description":"[What's changed in our Swagger](https://docs.codat.io/docs/new-swagger-ui)","version":"v1"},"postman":{"name":"Set company specific settings","description":{"content":"Company settings can be used to override the integration-level settings for whether Codat's desktop connectors are installed for\r\n            ongoing synchronisations or whether a one-time sync is performed and the connector is uninstalled. <br />\r\n            See [On-prem connector setup](https://docs.codat.io/docs/offline-connectors) for more information.","type":"text/plain"},"url":{"path":["companies",":companyId","settings"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"type":"any","value":"","key":"companyId"}]},"header":[{"key":"Content-Type","value":"application/json"},{"key":"Accept","value":"application/json"}],"method":"PUT","body":{"mode":"raw","raw":"\"\"","options":{"raw":{"language":"json"}}}}}
+sidebar_class_name: "put api-method"
+info_path: docs/codat/codat-api
+---
+
+import ParamsItem from "@theme/ParamsItem";
+import SchemaItem from "@theme/SchemaItem"
+import ApiTabs from "@theme/ApiTabs";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+## Set company specific settings
+
+
+
+Company settings can be used to override the integration-level settings for whether Codat&#39;s desktop connectors are installed for
+            ongoing synchronisations or whether a one-time sync is performed and the connector is uninstalled. &lt;br /&gt;
+            See [On-prem connector setup](https://docs.codat.io/docs/offline-connectors) for more information.
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"companyId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}}></ParamsItem></ul></div></details><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Request Body</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"companyId"} required={false} schemaDescription={undefined} schemaName={"uuid"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"offlineConnectorInstall"} required={false} schemaDescription={undefined} schemaName={"boolean"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"oneTimeSync"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem></ul></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Updated settings
+
+</div><div><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"companyId"} required={true} schemaDescription={undefined} schemaName={"uuid"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"offlineConnectorInstall"} required={true} schemaDescription={undefined} schemaName={"boolean"} qualifierMessage={undefined}></SchemaItem></ul></details></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+Settings object invalid
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Authentication failed - see [authentication instructions](https://docs.codat.io/docs/authentication-1)
+
+</div><div></div></TabItem><TabItem label={"402"} value={"402"}><div>
+
+Account limit reached - see [account limits](https://docs.codat.io/docs/environments-1)
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+Company not found
+
+</div><div></div></TabItem></ApiTabs></div>
+      

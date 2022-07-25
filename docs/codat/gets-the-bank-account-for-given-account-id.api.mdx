@@ -1,0 +1,36 @@
+---
+id: gets-the-bank-account-for-given-account-id
+sidebar_label: Gets the bank account for given account ID.
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["Accounting - Bank accounts"],"parameters":[{"name":"companyId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}},{"name":"accountId","in":"path","required":true,"schema":{"type":"string"}},{"name":"query","in":"query","schema":{"type":"string"}}],"responses":{"200":{"description":"Success","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string","nullable":true},"accountName":{"type":"string","nullable":true},"fromDate":{"type":"string","format":"date-time"},"toDate":{"type":"string","format":"date-time"},"nominalCode":{"type":"string","nullable":true},"sortCode":{"type":"string","nullable":true},"accountNumber":{"type":"string","nullable":true},"iban":{"type":"string","nullable":true},"currency":{"type":"string","nullable":true},"balance":{"type":"number","format":"double","nullable":true},"availableBalance":{"type":"number","format":"double","nullable":true},"modifiedDate":{"type":"string","format":"date-time","nullable":true},"sourceModifiedDate":{"type":"string","format":"date-time","nullable":true},"overdraftLimit":{"type":"number","format":"double","nullable":true},"institution":{"type":"string","nullable":true}},"additionalProperties":false}}}},"401":{"description":"Authentication failed - see [authentication instructions](https://docs.codat.io/docs/authentication-1)"},"402":{"description":"Account limit reached - see [account limits](https://docs.codat.io/docs/environments-1)"}},"description":"Gets the bank account for given account ID.","method":"get","path":"/companies/{companyId}/data/bankAccounts/{accountId}","servers":[{"url":"https://api.codat.io","description":"Codat API (Production)"}],"security":[{"AuthorizationHeader":[]}],"securitySchemes":{"AuthorizationHeader":{"type":"apiKey","description":"The word \"Basic\" followed by a space and your API Key, base64 encoded, which can be found [here](https://portal-integration.codat.io/#/profile)","name":"Authorization","in":"header"}},"info":{"title":"Codat API","description":"[What's changed in our Swagger](https://docs.codat.io/docs/new-swagger-ui)","version":"v1"},"postman":{"name":"Gets the bank account for given account ID.","description":{"type":"text/plain"},"url":{"path":["companies",":companyId","data","bankAccounts",":accountId"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"key":"query","value":""}],"variable":[{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"type":"any","value":"","key":"companyId"},{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"type":"any","value":"","key":"accountId"}]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: docs/codat/codat-api
+---
+
+import ParamsItem from "@theme/ParamsItem";
+import SchemaItem from "@theme/SchemaItem"
+import ApiTabs from "@theme/ApiTabs";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+## Gets the bank account for given account ID.
+
+
+
+Gets the bank account for given account ID.
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"companyId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"accountId","in":"path","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Query Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"query","in":"query","schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+Success
+
+</div><div><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"id"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"accountName"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"fromDate"} required={false} schemaDescription={undefined} schemaName={"date-time"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"toDate"} required={false} schemaDescription={undefined} schemaName={"date-time"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"nominalCode"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"sortCode"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"accountNumber"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"iban"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"currency"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"balance"} required={false} schemaDescription={undefined} schemaName={"double"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"availableBalance"} required={false} schemaDescription={undefined} schemaName={"double"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"modifiedDate"} required={false} schemaDescription={undefined} schemaName={"date-time"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"sourceModifiedDate"} required={false} schemaDescription={undefined} schemaName={"date-time"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"overdraftLimit"} required={false} schemaDescription={undefined} schemaName={"double"} qualifierMessage={undefined}></SchemaItem><SchemaItem collapsible={false} name={"institution"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined}></SchemaItem></ul></details></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Authentication failed - see [authentication instructions](https://docs.codat.io/docs/authentication-1)
+
+</div><div></div></TabItem><TabItem label={"402"} value={"402"}><div>
+
+Account limit reached - see [account limits](https://docs.codat.io/docs/environments-1)
+
+</div><div></div></TabItem></ApiTabs></div>
+      

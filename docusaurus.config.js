@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Codat Docs',
+  tagline: 'SMB data is cool',
+  url: 'https://docs.codat.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -16,7 +16,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: 'codat', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -56,10 +56,15 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
+      },
       navbar: {
-        title: 'My Site',
+        title: 'Codat',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Codat Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -67,9 +72,28 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: "dropdown",
+            label: "Demos",
+            position: "left",
+            items: [
+              {
+                label: "Accounting API",
+                to: "/docs/codat",
+              },
+              {
+                label: "API Zoo",
+                to: "/docs/petstore-api",
+              },
+              {
+                label: "Petstore (versioned)",
+                to: "/docs/petstore-versioned-api",
+              },
+            ],
+          },
+          {to: '/blog', label: 'Changelog', position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -127,6 +151,42 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "apiDocs",
+        docsPluginId: "classic",
+        config: {
+          petstore: {
+            specPath: "examples/petstore.yaml",
+            outputDir: "docs/petstore",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          },
+          codat: {
+            specPath: "examples/codat.json",
+            outputDir: "docs/codat",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          cos: {
+            specPath: "examples/openapi-cos.json",
+            outputDir: "docs/cos",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+        }
+      },
+    ],
+   ],
+
+  themes: ["docusaurus-theme-openapi-docs"], // Allows use of @theme/ApiItem and other components
 };
 
 module.exports = config;
