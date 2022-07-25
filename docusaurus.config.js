@@ -29,25 +29,23 @@ const config = {
 
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      "docusaurus-preset-openapi",
+      /** @type {import('docusaurus-preset-openapi').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -74,26 +72,8 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          {
-            type: "dropdown",
-            label: "Demos",
-            position: "left",
-            items: [
-              {
-                label: "Accounting API",
-                to: "/docs/codat",
-              },
-              {
-                label: "API Zoo",
-                to: "/docs/petstore-api",
-              },
-              {
-                label: "Petstore (versioned)",
-                to: "/docs/petstore-versioned-api",
-              },
-            ],
-          },
-          {to: '/blog', label: 'Changelog', position: 'left'},
+          { to: "/api", label: "API", position: "left" },
+          { to: '/blog', label: 'Changelog', position: 'left' },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -151,42 +131,6 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-
-  plugins: [
-    [
-      'docusaurus-plugin-openapi-docs',
-      {
-        id: "apiDocs",
-        docsPluginId: "classic",
-        config: {
-          petstore: {
-            specPath: "examples/petstore.yaml",
-            outputDir: "docs/petstore",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-              categoryLinkSource: "tag",
-            },
-          },
-          codat: {
-            specPath: "examples/codat.json",
-            outputDir: "docs/codat",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-            },
-          },
-          cos: {
-            specPath: "examples/openapi-cos.json",
-            outputDir: "docs/cos",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-            },
-          },
-        }
-      },
-    ],
-   ],
-
-  themes: ["docusaurus-theme-openapi-docs"], // Allows use of @theme/ApiItem and other components
 };
 
 module.exports = config;
